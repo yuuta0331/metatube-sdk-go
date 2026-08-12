@@ -584,16 +584,28 @@ func (fz *FANZA) NormalizeMovieKeyword(keyword string) string {
 
 func (fz *FANZA) SearchMovie(keyword string) ([]*model.MovieSearchResult, error) {
 	if strings.Contains(keyword, "-") {
-		if results, err := fz.searchMovieNext(strings.Replace(keyword,
-			/* FANZA cannot search hyphened number */
-			"-", "00", 1) +
-			/* Add a `#` sign to distinguish 001 style number */
-			"#"); err == nil && len(results) > 0 {
+		// The search backend only matches the exact (zero-padded)
+		// content ID, e.g., SAVR-1048 -> savr01048. A `#` sign is
+		// appended to distinguish 001 style numbers.
+		if results, err := fz.searchMovieNext(padMovieID(keyword) + "#"); err == nil && len(results) > 0 {
 			return results, nil
 		}
 	}
 	// fallback to normal dvd search.
 	return fz.searchMovieNext(strings.Replace(keyword, "-", "", 1))
+}
+
+// padMovieID zero-pads the trailing number of a hyphenated keyword to
+// the 5-digit format used by FANZA content IDs, e.g., "savr-1048" ->
+// "savr01048", so that the search backend can find the exact product.
+func padMovieID(keyword string) string {
+	if i := strings.LastIndex(keyword, "-"); i > 0 {
+		prefix, numStr := keyword[:i], keyword[i+1:]
+		if n, err := strconv.Atoi(numStr); err == nil {
+			return prefix + fmt.Sprintf("%05d", n)
+		}
+	}
+	return keyword
 }
 
 func (fz *FANZA) searchMovieNext(keyword string) (results []*model.MovieSearchResult, err error) {

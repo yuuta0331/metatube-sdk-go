@@ -125,6 +125,24 @@ func TestFANZA_SearchMovie(t *testing.T) {
 	})
 }
 
+func TestPadMovieID(t *testing.T) {
+	for _, unit := range []struct {
+		keyword, want string
+	}{
+		{"savr-1048", "savr01048"},
+		{"ssis-899", "ssis00899"},
+		{"ssis-00899", "ssis00899"},
+		{"midv-003", "midv00003"},
+		{"t-28621", "t28621"},
+		{"h_237ambi-207", "h_237ambi00207"},
+		{"h_1133honb-006", "h_1133honb00006"},
+		{"118onez-171", "118onez00171"},
+		{"mogi044", "mogi044"}, // no hyphen, pass through
+	} {
+		assert.Equal(t, unit.want, padMovieID(unit.keyword))
+	}
+}
+
 func TestFANZA_GetMovieReviewsByURL(t *testing.T) {
 	testkit.Test(t, New, []string{
 		"https://www.dmm.co.jp/digital/videoa/-/detail/=/cid=dass00256/",
