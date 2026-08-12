@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果 - DLsite</title>
+</head>
+<body>
+    <!-- Header and navigation (simplified) -->
+    <header>
+        <div class="header_menu">
+            <a href="/">DLsite</a>
+        </div>
+    </header>
+
+    <!-- Search results area -->
+    <div id="search_result_container">
+        <div class="search_result_header">
+            <h1>検索結果</h1>
+            <p class="result_count">3件の作品が見つかりました</p>
+        </div>
+
+        <!-- Search result list -->
+        <ul id="search_result_img_box">
+            <!-- Result 1: RJ Voice Work (should be included in filtering) -->
+            <li class="search_result_img_box_inner">
+                <div class="search_result_img">
+                    <dt class="search_img">
+                        <a href="/maniax/work/=/product_id/RJ123456.html">
+                            <img src="https://img.dlsite.jp/modpub/images2/work/doujin/RJ123000/RJ123456_img_main.jpg" 
+                                 alt="サンプル音声作品" />
+                        </a>
+                    </dt>
+                    <dd class="work_info">
+                        <dd class="work_name">
+                            <a href="/maniax/work/=/product_id/RJ123456.html">サンプル音声作品</a>
+                        </dd>
+                        <dd class="work_maker">
+                            <a href="/maniax/circle/profile/=/maker_id/RG12345.html">テストサークル</a>
+                        </dd>
+                        <dd class="work_price">
+                            <span class="price">1,100円</span>
+                        </dd>
+                        <dd class="work_genre">
+                            <span>ボイス・ASMR</span>
+                            <span>癒し</span>
+                            <span>バイノーラル</span>
+                        </dd>
+                        <dd class="work_rating">
+                            <span class="star_rating">★★★★☆</span>
+                            <span class="review_count">(123)</span>
+                        </dd>
+                    </dd>
+                </div>
+            </li>
+
+            <!-- Result 2: VJ Game Work (should be filtered out - not voice/video) -->
+            <li class="search_result_img_box_inner">
+                <div class="search_result_img">
+                    <dt class="search_img">
+                        <a href="/maniax/work/=/product_id/VJ234567.html">
+                            <img src="https://img.dlsite.jp/modpub/images2/work/doujin/VJ234000/VJ234567_img_main.jpg" 
+                                 alt="サンプルゲーム作品" />
+                        </a>
+                    </dt>
+                    <dd class="work_info">
+                        <dd class="work_name">
+                            <a href="/maniax/work/=/product_id/VJ234567.html">サンプルゲーム作品</a>
+                        </dd>
+                        <dd class="work_maker">
+                            <a href="/maniax/circle/profile/=/maker_id/RG23456.html">ゲームサークル</a>
+                        </dd>
+                        <dd class="work_price">
+                            <span class="price">1,500円</span>
+                        </dd>
+                        <dd class="work_genre">
+                            <span>ロールプレイング</span>
+                            <span>アドベンチャー</span>
+                        </dd>
+                        <dd class="work_rating">
+                            <span class="star_rating">★★★★★</span>
+                            <span class="review_count">(456)</span>
+                        </dd>
+                    </dd>
+                </div>
+            </li>
+
+            <!-- Result 3: RJ Voice Work (should be included in filtering) -->
+            <li class="search_result_img_box_inner">
+                <div class="search_result_img">
+                    <dt class="search_img">
+                        <a href="/maniax/work/=/product_id/RJ789012.html">
+                            <img src="https://img.dlsite.jp/modpub/images2/work/doujin/RJ789000/RJ789012_img_main.jpg" 
+                                 alt="もう一つの音声作品" />
+                        </a>
+                    </dt>
+                    <dd class="work_info">
+                        <dd class="work_name">
+                            <a href="/maniax/work/=/product_id/RJ789012.html">もう一つの音声作品</a>
+                        </dd>
+                        <dd class="work_maker">
+                            <a href="/maniax/circle/profile/=/maker_id/RG78901.html">別のサークル</a>
+                        </dd>
+                        <dd class="work_price">
+                            <span class="price">880円</span>
+                        </dd>
+                        <dd class="work_genre">
+                            <span>ボイス・ASMR</span>
+                            <span>ドラマ</span>
+                        </dd>
+                        <dd class="work_rating">
+                            <span class="star_rating">★★★★☆</span>
+                            <span class="review_count">(89)</span>
+                        </dd>
+                    </dd>
+                </div>
+            </li>
+
+            <!-- Result 4: BJ Comic Work (should be filtered out - not voice/video) -->
+            <li class="search_result_img_box_inner">
+                <div class="search_result_img">
+                    <dt class="search_img">
+                        <a href="/books/work/=/product_id/BJ345678.html">
+                            <img src="https://img.dlsite.jp/modpub/images2/work/doujin/BJ345000/BJ345678_img_main.jpg" 
+                                 alt="サンプルコミック作品" />
+                        </a>
+                    </dt>
+                    <dd class="work_info">
+                        <dd class="work_name">
+                            <a href="/books/work/=/product_id/BJ345678.html">サンプルコミック作品</a>
+                        </dd>
+                        <dd class="work_maker">
+                            <a href="/books/circle/profile/=/maker_id/RG34567.html">コミックサークル</a>
+                        </dd>
+                        <dd class="work_price">
+                            <span class="price">770円</span>
+                        </dd>
+                        <dd class="work_genre">
+                            <span>マンガ</span>
+                            <span>CG・イラスト</span>
+                        </dd>
+                        <dd class="work_rating">
+                            <span class="star_rating">★★★☆☆</span>
+                            <span class="review_count">(34)</span>
+                        </dd>
+                    </dd>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Pagination (simplified) -->
+        <div class="pagination">
+            <ul>
+                <li class="current"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">次へ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sidebar (simplified) -->
+    <aside class="sidebar">
+        <div class="search_filter">
+            <h3>絞り込み</h3>
+            <div class="filter_category">
+                <h4>カテゴリ</h4>
+                <ul>
+                    <li><input type="checkbox" id="cat_voice" checked> <label for="cat_voice">ボイス・ASMR</label></li>
+                    <li><input type="checkbox" id="cat_game"> <label for="cat_game">ゲーム</label></li>
+                    <li><input type="checkbox" id="cat_comic"> <label for="cat_comic">マンガ</label></li>
+                </ul>
+            </div>
+            <div class="filter_price">
+                <h4>価格</h4>
+                <ul>
+                    <li><input type="checkbox" id="price_all" checked> <label for="price_all">すべて</label></li>
+                    <li><input type="checkbox" id="price_500"> <label for="price_500">500円以下</label></li>
+                    <li><input type="checkbox" id="price_1000"> <label for="price_1000">1000円以下</label></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Footer (simplified) -->
+    <footer>
+        <p>&copy; DLsite</p>
+    </footer>
+</body>
+</html>
